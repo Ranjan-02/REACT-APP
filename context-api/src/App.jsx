@@ -1,17 +1,29 @@
-import React from "react"
-import Login from "./components/Login";
-import Profile from "./components/Profile";
-import UserContextProvider from "./context/UserContextProvider";
+import React, { createContext } from "react"
+import ChildA from "./components/ChildA";
+
+
+const data = createContext()
+const data1 = createContext()
+const data2 = createContext()
 
 function App() {
+
+  let myname = "Ranjan Maji"
+  let age = 25;
+  let gender = "Male"
   return (
     <>
-      <UserContextProvider>
-        <h1>Context-API</h1>
-        <Login />
-        <Profile />
+      <data.Provider value={myname}>
+        <data1.Provider value={age}>
+          <data2.Provider value={gender}>
 
-      </UserContextProvider>
+            <ChildA />
+          </data2.Provider>
+
+        </data1.Provider>
+
+      </data.Provider>
+
 
     </>
 
@@ -20,3 +32,5 @@ function App() {
 }
 
 export default App;
+
+export { data, data1, data2 }
