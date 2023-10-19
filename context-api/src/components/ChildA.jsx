@@ -1,10 +1,13 @@
-import React from 'react'
+import React, { memo } from 'react'
 import ChildB from './ChildB'
 
-function ChildA() {
+function ChildA({ myFunction }) {
+    console.log('i am child A');
+
+
     return (
         <>
-            <ChildB />
+            {/* <ChildB /> */}
 
         </>
 
@@ -13,4 +16,4 @@ function ChildA() {
     )
 }
 
-export default ChildA
+export default memo(ChildA)

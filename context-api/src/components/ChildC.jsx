@@ -1,39 +1,14 @@
-import React from 'react'
-import { data, data1, data2 } from '../App'
+import React, { useContext } from 'react'
+import { data1, data2, data3 } from "../App"
+
 
 function ChildC() {
+    const myName = useContext(data2)
+    const age = useContext(data1)
+    const gender = useContext(data3)
 
     return (
-        <>
-            <data.Consumer>
-                {
-                    (myname) => {
-                        return (
-                            <data1.Consumer>
-                                {
-                                    (age) => {
-                                        return (
-                                            <data2.Consumer>
-                                                {
-                                                    (gende) => {
-                                                        return (
-                                                            <p>My name is :{myname},age is {age} and gender:{gende}</p>
-                                                        )
-                                                    }
-                                                }
-                                            </data2.Consumer>
-
-                                        )
-                                    }
-                                }
-                            </data1.Consumer>
-
-                        )
-                    }
-                }
-            </data.Consumer>
-
-        </>
+        <h3>my name :{myName} my age:{age} my gender:{gender}</h3>
     )
 }
 
