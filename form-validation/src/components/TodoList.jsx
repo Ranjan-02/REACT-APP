@@ -1,20 +1,17 @@
 import React, { useState } from 'react'
 
 function TodoList() {
-    const [avtivity, setActivity] = useState("")
-    const [tolist, setTodoList] = useState([])
+    const [count, setCount] = useState(10)
 
-    function addList() {
-
-    }
-
+    setInterval(() => {
+        // setCount(count + 1)
+    }, 2000);
     return (
         <>
-            <h1>Todo List</h1>
-            <input type="text" placeholder='yours activity' value={avtivity} onChange={(e) => setActivity(e.target.value)} />
-            <button onClick={addList}>Addd</button>
-        </>
 
+            <h1>todo list:{count}</h1>
+            <p>Lorem ipsum dolor sit amet {count} consectetur adipisicing elit. Adipisci provident in laborum eius expedita ab cumque tempora quia at temporibus.</p>
+        </>
     )
 }
 
