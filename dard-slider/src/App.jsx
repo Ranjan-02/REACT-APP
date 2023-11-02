@@ -1,11 +1,12 @@
 import React from "react"
 
 import './App.css'
+import Dictionary from "./components/Dictionary"
 
 function App() {
   return (
     <>
-      <h1>todo App</h1>
+      <Dictionary />
 
     </>
   )
