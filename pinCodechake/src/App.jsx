@@ -7,26 +7,31 @@ function App() {
   const [result, setResult] = useState([])
 
 
-  async function hendleSubmit() {
-    let result = await fetch(`https://api.postalpincode.in/pincode/${pincode}`)
+  async function getData(pin) {
+    let result = await fetch(`https://api.postalpincode.in/pincode/${pin}`)
     result = await result.json()
-    setResult(result[0].PostOffice[0])
-
+    setResult(result)
   }
 
+
+
+
+  function hendleChange(e) {
+    setPincode(e.target.value)
+  }
 
 
   return (
     <>
       <h1>Enter pin Code</h1>
-      <input type="number" value={pincode} id='3' onChange={(e) => setPincode(e.target.value)} />
-      <button onClick={hendleSubmit}>Submit</button>
+      <input type="number" value={pincode} id='3' onChange={hendleChange} />
+      <button onClick={() => getData(pincode)}>Submit</button>
 
-      <h3>Pincode is :{Name}</h3>
-      <h5>Post Office Name : 723133</h5>
-      <h5>State : West-Bengal</h5>
-      <h5>Distric : Purulia</h5>
-      <h5>Block : Raghunathpur</h5>
+      {/* <h3>Pincode is :{result}</h3> */}
+      <h5>Post Office Name : {result[0].PostOffice[0].Name}</h5>
+      <h5>State : {result[0].PostOffice[0].State}</h5>
+      <h5>Distric : {result[0].PostOffice[0].District}</h5>
+      <h5>Block : {result[0].PostOffice[0].Block}</h5>
 
 
     </>
