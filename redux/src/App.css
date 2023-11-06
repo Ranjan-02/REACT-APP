@@ -1,42 +1,152 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.navbar {
+  padding: 10px 20px;
+  background-color: #474646;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  column-gap: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+ul li {
+  list-style: none;
+}
+
+.cart {
+  padding: 8px;
+  background-color: green;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+
+}
+
+/* product */
+.heading {
+  margin-bottom: 20px;
+}
+
+.card-contenar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2%;
+}
+
+.contenar {
+  border: 2px solid rgb(104, 101, 101);
+  width: 15%;
+  border-radius: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all ease 0.2s;
+
+}
+
+.contenar:hover {
+  transform: scale(1.01);
 }
 
 .card {
-  padding: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+
+
 }
 
-.read-the-docs {
-  color: #888;
+.img-box {
+  width: 180px;
+  height: 200px;
+  padding: 10px;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+.img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+h3 {
+  margin: 5px 0;
+}
+
+button {
+  padding: 8px 10px;
+  background-color: rgb(61, 61, 212);
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+
+}
+
+button:active {
+  background-color: blue;
+}
+
+/* ============== Product Details Components ============= */
+
+.details-contenar {
+  width: 90%;
+  margin: auto;
+  border: 2px solid grey;
+  height: 90vh;
+  display: flex;
+  gap: 40px;
+
+
+}
+
+.img-details {
+  width: 30%;
+  border: 2px solid red;
+  padding: 20px;
+
+}
+
+.img-details img {
+  width: 100%;
+}
+
+.decription-contenar {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.decription-contenar h1 {
+  font-size: 40px;
+}
+
+.decription-contenar p {
+  font-size: 18px;
+}
+
+.decription-contenar .price {
+  font-size: 40px;
+}
+
+.buy-btn {
+  margin-left: 10px;
 }
